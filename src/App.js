@@ -28,8 +28,7 @@ class BooksApp extends React.Component {
 
         if (query.length === 0) {
             this.setState({searchResults: ""});
-        }
-        else {
+        } else {
             this.setState({searchResults: ""});
             BooksAPI.search(query.trimLeft()).then((searchResults) => {
                 // console.log(searchResults);
@@ -41,8 +40,7 @@ class BooksApp extends React.Component {
                         // console.log(temp);
                         if (Array.isArray(temp) && temp.length > 0) {
                             searchResults[index].shelf = temp[0].shelf;
-                        }
-                        else {
+                        } else {
                             searchResults[index].shelf = "none";
                         }
                         return temp;
